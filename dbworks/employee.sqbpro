@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/web_db/web_db.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="716"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,8:mainemployee"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="employee" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="4" mode="1"/></sort><column_widths><column index="1" value="59"/><column index="2" value="47"/><column index="3" value="35"/><column index="4" value="47"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="employee.sql">--검색 : 조건을 이용한 검색: WHERE 절을 사용
+SELECT name, age FROM employee WHERE emp_id = 'e1002';	
+--사원 검색--
+SELECT * FROM employee;
+--사원 테이블 생성--
+CREATE TABLE employee(
+	emp_id	CHAR(5) PRIMARY KEY,
+	name	TEXT NOT NULL,
+	age		INTEGER,
+	salary	INTEGER
+)
+--사원추가--
+INSERT INTO employee(emp_id, name, age, salary) VALUES ('e1001', '추신수', 39, 10000);
+INSERT INTO employee(emp_id, name, age, salary) VALUES ('e1002', '김연아', 34, 20000);
+INSERT INTO employee VALUES ('e1003', '손흥민', 30, 30000);
+
+COMMIT;		--입력, 수정, 삭제가 있는 경우 반드시 해야함
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
